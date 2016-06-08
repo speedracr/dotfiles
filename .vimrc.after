@@ -1,0 +1,60 @@
+" Added by Jonas
+colorscheme phoenix
+" autocmd vimenter * NERDTree
+set clipboard=unnamedplus
+:ca qq qa!
+:ca xx xa
+call matchadd('ColorColumn', '\%81v', 100)
+let g:markdown_fenced_languages = ['html', 'vim', 'ruby', 'javascript', 'python', 'bash=sh']
+
+" autostart NERDTree
+"autocmd vimenter * NERDTree
+" autostart NERDTree unless file is specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" focus on UndoTree when toggling
+let g:undotree_SetFocusWhenToggle = 1
+
+" autoexit NERDTree if last tab
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" autostrip whitespace on save via better-whitespace
+autocmd BufWritePre * StripWhitespace
+
+
+" set textwidth=80
+set nocompatible
+syntax enable
+set encoding=utf-8
+set showcmd
+filetype plugin indent on
+set history=10000
+set noswapfile
+set ruler
+set autoread
+set autoindent
+set backspace=2
+set hidden
+set nowrap
+set tabstop=2 shiftwidth=2
+set expandtab
+set backspace=indent,eol,start
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set splitbelow
+set splitright
+
+" Remap line move to free up Ctrl-j/k
+"nnoremap <S-J> :m+<CR>==
+"nnoremap <S-K> :m-2<CR>==
+" Remap switch to right/left pane
+" skipping J/K to avoid overriding line move
+nnoremap <S-L> <C-W><C-L>
+nnoremap <S-H> <C-W><C-H>
+nnoremap <S-J> <C-W><C-J>
+nnoremap <S-K> <C-W><C-K>
+nnoremap <F6> :NERDTreeToggle<cr>
+nnoremap <F5> :UndotreeToggle<cr>
