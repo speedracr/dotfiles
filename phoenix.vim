@@ -1,4 +1,4 @@
-" ## Place in ~/.vim/janus/vim/colors/phoenix ##
+" ## Place in ~/.vim/janus/vim/colors/phoenix.vim / /phoenix/phoenix.vim ##
 " ############################################################################
 " Name:       Phoenix color scheme
 " Maintainer: Danu Widatama <widatama@gmail.com>
